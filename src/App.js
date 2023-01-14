@@ -50,9 +50,9 @@ function App() {
                 {element.meals.map((element2) => {
                   return (
                     <div className="parts" key={element2.id}>
-                      <div>
+                      <div className="object">
                         <h3> {element2.title}</h3>
-                        <p>{element2.description}</p>
+                        <p>{element2.description.slice(0, 60)}</p>
                         <h4>{element2.price} €</h4>
                       </div>
                       <div>
