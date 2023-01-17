@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import logo from "./assets/img/logo-teal.svg";
+import Header from "./components/Header";
 
 function App() {
   const [data, setData] = useState({});
@@ -28,10 +28,7 @@ function App() {
     <span>En cours de chargement...</span>
   ) : (
     <div className="App">
-      <header>
-        <img className="container" src={logo} alt="logo-teal" />
-      </header>
-
+      <Header />
       <section className="restaurant container">
         <div>
           <h1>{data.restaurant.name}</h1>
@@ -41,30 +38,37 @@ function App() {
           <img src={data.restaurant.picture} alt="pic" />
         </div>
       </section>
-      <section className="categories">
-        {data.categories.map((element, index) => {
-          return (
-            <div className="container" key={index}>
-              <h2> {element.name}</h2>
-              <div className="list-parts">
-                {element.meals.map((element2) => {
-                  return (
-                    <div className="parts" key={element2.id}>
-                      <div className="object">
-                        <h3> {element2.title}</h3>
-                        <p>{element2.description.slice(0, 60)}</p>
-                        <h4>{element2.price} €</h4>
-                      </div>
-                      <div>
-                        <img src={element2.picture} alt="pic1" />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
+      <section className="categories ">
+        <div className="container meal">
+          <div>
+            {data.categories.map((category, index) => {
+              return (
+                <div className="container" key={index}>
+                  <h2> {category.name}</h2>
+                  <div className="list-parts">
+                    {category.meals.map((meal) => {
+                      return (
+                        <div className="parts" key={meal.id}>
+                          <div className="object">
+                            <h3> {meal.title}</h3>
+                            <p>{meal.description.slice(0, 60)}</p>
+                            <h4>{meal.price} €</h4>
+                          </div>
+                          <div>
+                            <img src={meal.picture} alt="pic1" />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="panier">
+            <p>Panier</p>
+          </div>
+        </div>
       </section>
     </div>
   );
