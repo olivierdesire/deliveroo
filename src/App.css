@@ -126,8 +126,99 @@ h4 {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+/* PANIER */
 .panier {
   background-color: white;
   width: 350px;
   flex-shrink: 0;
+  border-radius: 5px;
+  height: max-content;
+  min-height: 180px;
+}
+
+.validation {
+  height: 50px;
+  width: 330px;
+  border-radius: 5px;
+  margin: 10px;
+  border: none;
+  font-size: 16px;
+  line-height: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-weight: bold;
+}
+
+.color-vide {
+  background-color: #bac3c3;
+  color: #a0adad;
+}
+
+.color-nonvide {
+  background-color: #00cdbd;
+  color: white;
+}
+
+.validation-2 {
+  margin: 10px;
+}
+
+.panier-vide {
+  height: 110px;
+  color: #a3a3a3;
+  font-size: 16px;
+  line-height: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-panier {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.detail-panier > div {
+  display: flex;
+  align-items: center;
+}
+
+.detail-panier > p {
+  display: flex;
+  align-items: center;
+}
+
+.detail-panier button {
+  border-radius: 50%;
+}
+
+.detail-panier-title {
+  padding-left: 10px;
+}
+
+.detail-panier-qte {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.trait {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 0.1px solid rgb(229, 225, 225);
+}
+
+.totaux {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.final {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(82, 77, 77);
 }
