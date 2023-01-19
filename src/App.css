@@ -192,6 +192,9 @@ h4 {
 
 .detail-panier button {
   border-radius: 50%;
+  border: 0.1px solid #00cdbd;
+  background-color: white;
+  color: #00cdbd;
 }
 
 .detail-panier-title {

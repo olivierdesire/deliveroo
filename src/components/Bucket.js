@@ -69,7 +69,7 @@ const Bucket = ({ bucket, setBucket, sstotal, setSstotal }) => {
 
                   <p className="detail-panier-title">{element.title}</p>
                 </div>
-                <p>{element.amount} €</p>
+                <p>{Number.parseFloat(element.amount).toFixed(2)} €</p>
               </div>
             </div>
           );
@@ -79,7 +79,7 @@ const Bucket = ({ bucket, setBucket, sstotal, setSstotal }) => {
             <p className="trait"></p>
             <div className="totaux">
               <p>Sous-total</p>
-              <p>{sstotal} €</p>
+              <p>{Number.parseFloat(sstotal).toFixed(2)} €</p>
             </div>
             <div className="totaux">
               <p>Frais de livraison</p>
@@ -88,7 +88,7 @@ const Bucket = ({ bucket, setBucket, sstotal, setSstotal }) => {
             <p className="trait"></p>
             <div className="totaux final">
               <p>Total</p>
-              <p>{sstotal + 2.5} €</p>
+              <p>{Number.parseFloat(sstotal + 2.5).toFixed(2)} €</p>
             </div>{" "}
           </div>
         ) : (
