@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 const Bucket = ({ bucket, setBucket, sstotal, setSstotal }) => {
+  const [valid, setValid] = useState(true);
   return (
     <div className="panier">
       <button
@@ -7,6 +10,11 @@ const Bucket = ({ bucket, setBucket, sstotal, setSstotal }) => {
             ? "validation color-vide"
             : "validation color-nonvide"
         }
+        onClick={() => {
+          const newtab = [];
+          setBucket(newtab);
+          setValid(false);
+        }}
       >
         Valider mon panier
       </button>
@@ -93,7 +101,7 @@ const Bucket = ({ bucket, setBucket, sstotal, setSstotal }) => {
           </div>
         ) : (
           <div className="panier-vide">
-            <p> Votre panier est vide</p>
+            {valid ? <p> Votre panier est vide</p> : <p> Panier validé </p>}
           </div>
         )}
       </div>
