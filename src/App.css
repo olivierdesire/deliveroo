@@ -10,7 +10,7 @@ header {
 }
 
 .baseline {
-  border-bottom: 0.1px solid;
+  border-bottom: 0.1px solid rgb(224, 215, 215);
 }
 
 header img {
@@ -24,7 +24,7 @@ header img {
 
 .restaurant p {
   margin-top: 40px;
-  width: 800px;
+  /* width: 800px; */
   font-size: 19px;
   line-height: 28px;
   color: #868a8a;
@@ -45,7 +45,7 @@ h1 {
   height: 200px;
   width: 350px;
   object-fit: cover;
-  margin: 30px;
+  margin: 30px 0 30px 30px;
   border-radius: 5px;
 }
 
@@ -54,7 +54,7 @@ h1 {
   padding-top: 10px;
 }
 
-.meal.container {
+.meal {
   display: flex;
 }
 
@@ -70,7 +70,7 @@ h2 {
 
 .list-parts {
   display: flex;
-  width: 1000px;
+  /* width: 1000px; */
   flex-wrap: wrap;
   padding-bottom: 10px;
 }
@@ -88,7 +88,7 @@ h3 {
 .parts {
   background-color: white;
   height: 165px;
-  width: 40%;
+  width: calc(50% - 20px);
   display: flex;
   flex-shrink: 0;
   margin-right: 20px;
@@ -127,6 +127,7 @@ h4 {
 }
 
 .panier {
-  background-color: red;
+  background-color: white;
   width: 350px;
+  flex-shrink: 0;
 }
