@@ -1,37 +1,37 @@
 import { useState } from "react";
 
-const Bucket = ({ bucket, setBucket, sstotal, setSstotal }) => {
+const Basket = ({ basket, setBasket, sstotal, setSstotal }) => {
   const [valid, setValid] = useState(true);
   return (
     <div className="panier">
       <button
         className={
-          bucket.length === 0
+          basket.length === 0
             ? "validation color-vide"
             : "validation color-nonvide"
         }
         onClick={() => {
           const newtab = [];
-          setBucket(newtab);
+          setBasket(newtab);
           setValid(false);
         }}
       >
         Valider mon panier
       </button>
       <div>
-        {bucket.map((element, index) => {
+        {basket.map((element, index) => {
           return (
             <div key={index}>
               <div className="detail-panier">
                 <div>
                   <button
                     onClick={() => {
+                      const copytab = [...basket];
                       if (element.quantity > 1) {
-                        const copytab = [...bucket];
                         copytab[index].quantity -= 1;
                         copytab[index].amount =
                           copytab[index].price * copytab[index].quantity;
-                        setBucket(copytab);
+                        setBasket(copytab);
 
                         let count = 0;
                         for (let i = 0; i < copytab.length; i++) {
@@ -39,16 +39,17 @@ const Bucket = ({ bucket, setBucket, sstotal, setSstotal }) => {
                         }
                         setSstotal(count);
                       } else {
-                        const newtab = [];
-                        for (let i = 0; i < bucket.length; i++) {
-                          if (i !== index) {
-                            newtab.push(bucket[i]);
-                          }
-                        }
-                        setBucket(newtab);
+                        // const newtab = [];
+                        // for (let i = 0; i < basket.length; i++) {
+                        //   if (i !== index) {
+                        //     newtab.push(basket[i]);
+                        //   }
+                        // }
+                        copytab.splice(index, 1);
+                        setBasket(copytab);
                         let count = 0;
-                        for (let i = 0; i < newtab.length; i++) {
-                          count = count + newtab[i].amount;
+                        for (let i = 0; i < copytab.length; i++) {
+                          count = count + copytab[i].amount;
                         }
                         setSstotal(count);
                       }
@@ -59,11 +60,11 @@ const Bucket = ({ bucket, setBucket, sstotal, setSstotal }) => {
                   <p className="detail-panier-qte">{element.quantity}</p>
                   <button
                     onClick={() => {
-                      const copytab = [...bucket];
+                      const copytab = [...basket];
                       copytab[index].quantity += 1;
                       copytab[index].amount =
                         copytab[index].price * copytab[index].quantity;
-                      setBucket(copytab);
+                      setBasket(copytab);
 
                       let count = 0;
                       for (let i = 0; i < copytab.length; i++) {
@@ -82,7 +83,7 @@ const Bucket = ({ bucket, setBucket, sstotal, setSstotal }) => {
             </div>
           );
         })}
-        {bucket.length !== 0 ? (
+        {basket.length !== 0 ? (
           <div className="validation-2">
             <p className="trait"></p>
             <div className="totaux">
@@ -109,4 +110,4 @@ const Bucket = ({ bucket, setBucket, sstotal, setSstotal }) => {
   );
 };
 
-export default Bucket;
+export default Basket;

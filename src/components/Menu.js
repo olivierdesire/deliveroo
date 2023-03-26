@@ -1,7 +1,7 @@
 import Meal from "./Meal";
-import Bucket from "./Bucket";
+import Basket from "./Basket";
 
-const Menu = ({ data, bucket, setBucket, sstotal, setSstotal }) => {
+const Menu = ({ data, basket, setBasket, sstotal, setSstotal }) => {
   return (
     <section className="categories ">
       <div className="container meal">
@@ -15,10 +15,10 @@ const Menu = ({ data, bucket, setBucket, sstotal, setSstotal }) => {
                     return (
                       <Meal
                         meal={meal}
-                        bucket={bucket}
-                        setBucket={setBucket}
-                        sstotal={sstotal}
+                        basket={basket}
+                        setBasket={setBasket}
                         setSstotal={setSstotal}
+                        key={meal.id}
                       />
                     );
                   })}
@@ -27,9 +27,9 @@ const Menu = ({ data, bucket, setBucket, sstotal, setSstotal }) => {
             );
           })}
         </div>
-        <Bucket
-          bucket={bucket}
-          setBucket={setBucket}
+        <Basket
+          basket={basket}
+          setBasket={setBasket}
           sstotal={sstotal}
           setSstotal={setSstotal}
         />

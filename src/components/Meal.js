@@ -1,4 +1,4 @@
-const Meal = ({ meal, bucket, setBucket, sstotal, setSstotal }) => {
+const Meal = ({ meal, basket, setBasket, setSstotal }) => {
   return (
     <div
       key={meal.id}
@@ -6,7 +6,7 @@ const Meal = ({ meal, bucket, setBucket, sstotal, setSstotal }) => {
       onClick={() => {
         let change = false;
         // console.log(meal.id);
-        const copytab = [...bucket];
+        const copytab = [...basket];
         if (copytab.length === 0) {
           copytab.push({
             id: meal.id,
@@ -39,7 +39,7 @@ const Meal = ({ meal, bucket, setBucket, sstotal, setSstotal }) => {
           }
         }
         console.log(copytab);
-        setBucket(copytab);
+        setBasket(copytab);
 
         let count = 0;
         for (let i = 0; i < copytab.length; i++) {

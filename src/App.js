@@ -8,13 +8,13 @@ import Menu from "./components/Menu";
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [bucket, setBucket] = useState([]);
+  const [basket, setBasket] = useState([]);
   const [sstotal, setSstotal] = useState(0);
 
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://site--backend-deliveroo--97yqlpf4l44b.code.run/"
+        "https://site--backends--97yqlpf4l44b.code.run/"
       );
       setData(response.data);
       console.log(response.data);
@@ -37,8 +37,8 @@ function App() {
         <Hero data={data} />
         <Menu
           data={data}
-          bucket={bucket}
-          setBucket={setBucket}
+          basket={basket}
+          setBasket={setBasket}
           sstotal={sstotal}
           setSstotal={setSstotal}
         />
